@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- HEADER -->
+    <div class="flex justify-center gap-10 p-5 bg-[#262626]">
+        <div class="max-w-7xl flex-1 flex justify-between gap-10">
+            <div class="flex items-center flex-start">
+                <a href="./index.html">
+                    <img
+                        class="cursor-pointer object-contain"
+                        src="./img/Omega-art-logo-white.png"
+                        height="100px"
+                        width="100px"
+                    />
+                </a>
+            </div>
+            <div class="flex cursor-pointer item-center space-x-4 text-white">
+                <div class="flex ml-[7rem]">
+                    <a href="./index.html"><div class="py-2 px-4">Main</div></a>
+                    <a href="./addPage.html"><div class="py-2 px-4">Add</div></a>
+                    <a href="./profile.html"><div class="py-2 px-4">Profile</div></a>
+                    <div class="py-2 px-4">Admin</div>
+                </div>
+            </div>
+            <div class="flex cursor-pointer item-center space-x-4 text-white">
+                <a href="./login.html"><div class="py-2 px-4">Log In</div></a>
+                <a href="./registration.html"><div class="bg-black py-2 px-4 rounded-full">Register</div></a>
+            </div>
+        </div>
+    </div>
+    <!-- HEADER END -->
+    <!-- PROFILE -->
+    <div class="w-[40vh] h-[55vh] sm:h-[50vh] shadow-lg shadow-black-500/50 m-auto rounded-lg mt-6 text-center border-2 border-black">
+        <form class="flex items-center flex-col">
+            <label class="block m-4">
+                <img class="h-20 w-20 object-cover rounded-full mx-auto mt-6 shadow-lg" src="./img/img6.jpg" alt="Current profile photo" />
+                <p>User</p>
+            </label>
+            <label class="block m-4">
+                <input type="file" class="block w-full text-sm text-slate-500
+                file:mr-4 file:py-2 file:px-4
+                file:rounded-full file:border-0
+                file:text-sm file:font-semibold
+                file:bg-violet-50 file:text-violet-700
+                hover:file:bg-violet-100">
+            </label>
+            <button class="w-1/2 h-full bg-[#C50000] text-white rounded-full mt-4">Logout</button>
+        </form>
+    </div>
+    <!-- PROFILE END-->
+</body>
+</html>

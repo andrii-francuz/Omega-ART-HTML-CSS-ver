@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <!-- HEADER -->
+    <div class="flex justify-center gap-10 p-5 bg-[#262626]">
+        <div class="max-w-7xl flex-1 flex justify-between gap-10">
+            <div class="flex items-center flex-start">
+                <a href="./index.html">
+                    <img
+                        class="cursor-pointer object-contain"
+                        src="./img/Omega-art-logo-white.png"
+                        height="100px"
+                        width="100px"
+                    />
+                </a>
+            </div>
+            <div class="flex cursor-pointer item-center space-x-4 text-white">
+                <div class="flex ml-[7rem]">
+                    <a href="./index.html"><div class="py-2 px-4">Main</div></a>
+                    <a href="./addPage.html"><div class="py-2 px-4">Add</div></a>
+                    <a href="./profile.html"><div class="py-2 px-4">Profile</div></a>
+                    <div class="py-2 px-4">Admin</div>
+                </div>
+            </div>
+            <div class="flex cursor-pointer item-center space-x-4 text-white">
+                <a href="./login.html"><div class="py-2 px-4">Log In</div></a>
+                <a href="./registration.html"><div class="bg-black py-2 px-4 rounded-full">Register</div></a>
+            </div>
+        </div>
+    </div>
+    <!-- HEADER END -->
+    <!-- LOGIN -->
+    <div class="grid grid-cols-1 sm:grid-cols-2">
+        <div class="hidden sm:block">
+            <img class="h-screen w-full pbject-cover" src="./img/login-image.jpg">
+        </div>
+
+        <div class="bg-gray-800 flex flex-col justify-center">
+            <form class="max-w-[400px] w-full mx-auto bg-gray-900 p-8 rounded-lg">
+                <h2 class="text-4xl dark:text-white text-white font-bold text-center">SIGN IN</h2>
+                <div class="flex flex-col text-gray-400 py-2">
+                    <label>User name</label>
+                    <input class="rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:bg-gray-700 focus:outline-none" type="text"/>
+                </div>
+                <div class="flex flex-col text-gray-400 py-2">
+                    <label>Password</label>
+                    <input class="rounded-lg bg-gray-700 mt-2 p-2 focus:border-blue-500 focus:bg-gray-700 focus:outline-none" type="password"/>
+                </div>
+                <div class="flex justify-between text-gray-400 py-2">
+                    <p class="flex items-center"><input className="mr-2" type="checkbox">Remember Me</p>
+                    <p class="cursor-pointer">Forgot Password</p>
+                </div>
+                <button class="w-full my-5 py-2 bg-teal-500 shadow-lg shadow-teal-500/30 hover:shadow-teal-500/20 text-white font-semibold rounded-lg">Sign In</button>
+            </form>
+        </div>
+    </div>
+    <!-- LOGIN END -->
+</body>
+</html>
