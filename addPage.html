@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,34 +25,40 @@
             </div>
             <div class="flex cursor-pointer item-center space-x-4 text-white">
                 <div class="flex ml-[7rem]">
-                    <a href="./index.html"><div class="py-2 px-4">Main</div></a>
-                    <a href="./addPage.html"><div class="py-2 px-4">Add</div></a>
-                    <a href="./profile.html"><div class="py-2 px-4">Profile</div></a>
-                    <div class="py-2 px-4">Admin</div>
+                    <a href="/index.html"><div class="py-2 px-4">Main</div></a>
+                    {% if user.is_authenticated %}
+                          {% if user.is_staff %}
+                    <a href="/addPage.html"><div class="py-2 px-4">Add</div></a>
+                    <a href="/admin/"></a><div class="py-2 px-4">Admin</div>
+                    {% endif %}
+                    <a href="/profile.html"><div class="py-2 px-4">Profile</div></a>
+                    
                 </div>
             </div>
             <div class="flex cursor-pointer item-center space-x-4 text-white">
-                <a href="./login.html"><div class="py-2 px-4">Log In</div></a>
-                <a href="./registration.html"><div class="bg-black py-2 px-4 rounded-full">Register</div></a>
+                {% else %}
+                <a href="/login.html"><div class="py-2 px-4">Log In</div></a>
+                <a href="/registration.html"><div class="bg-black py-2 px-4 rounded-full">Register</div></a>
             </div>
         </div>
     </div>
     <!-- HEADER END -->
     <!-- ADD PAGE -->
     <div class="w-[40vh] h-[55vh] sm:h-[50vh] shadow-lg shadow-black-500/50 m-auto rounded-lg mt-6 border-black border-2">
-        <form class="flex items-center flex-col">
+        <form class="flex items-center flex-col" enctype = "multipart/form-data" method="POST">
+            {% csrf_token %}
             <label class="block m-6">
                 <span class="block text-sm font-medium text-slate-700">Name</span>
-                <input type="text" placeholder="Image Name" class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+                <input type="text" id="id_name" placeholder="Image Name" class="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
                 focus:outline-none focus:border-gray-900 focus:ring-1 focus:ring-gray-500
                 invalid:border-pink-500 invalid:text-pink-600">
-                <textarea placeholder="Description" class="mt-1 block w-[30vh] h-[20vh] px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
+                <textarea placeholder="Description" id="id_content" class="mt-1 block w-[30vh] h-[20vh] px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400
                 focus:outline-none focus:border-gray-900 focus:ring-1 focus:ring-gray-500
                 invalid:border-pink-500 invalid:text-pink-600
                 focus:invalid:border-pink-500 focus:invalid:ring-pink-500"></textarea>
             </label>
             <label class="block m-6">
-                <input type="file" class="block w-full text-sm text-slate-500
+                <input type="file" required id="id_img" accept="image/*" class="block w-full text-sm text-slate-500
                 file:mr-4 file:py-2 file:px-4
                 file:rounded-full file:border-0
                 file:text-sm file:font-semibold
